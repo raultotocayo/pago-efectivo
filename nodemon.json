@@ -1,0 +1,17 @@
+{
+  "watch": ["src", "bin", "test", "scripts"],
+  "ext": ".ts,.js,.pug,.css",
+  "ignore": [],
+  "exec": "ts-node ./src/index.ts",
+  "env": {
+    "PORT": 8000,
+    "URL_SERVER": "localhost",
+    "DB_URL": "mongodb://userLigo:H5urMHtqrU5DNlwM@cluster0-shard-00-00.pxaip.gcp.mongodb.net:27017,cluster0-shard-00-01.pxaip.gcp.mongodb.net:27017,cluster0-shard-00-02.pxaip.gcp.mongodb.net:27017/dbLigo?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
+    "SERVICE_URL": "http://168.181.10.146:8000/MSS_INDIAN/service",
+    "SERVICE_POKEMON": "https://pokeapi.co/api/v2",
+    "DB_NAME": "dbLigo",
+    "PAGO_EFECTIVO_URL":"http://localhost:3003/", 
+    "PAGO_EFECTIVO_ACCESS_KEY":"Julio20",
+    "PAGO_EFECTIVO_ID_SERVICE":"Qwerty20"
+  }
+}
