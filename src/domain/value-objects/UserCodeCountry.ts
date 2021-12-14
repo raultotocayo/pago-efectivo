@@ -10,10 +10,10 @@ export class UserCodeCountry {
         let re = /^\+\d+$/;
         return re.test(code);
     }
-    public static create(code: string): UserCodeCountry {
-        if (!this.isValidCodeCountry(code)) {
-            throw new Error('Invalid user code country');
+    public static create(mobileCountryCode: string): UserCodeCountry {
+        if (!this.isValidCodeCountry(mobileCountryCode)) {
+            throw new Error('Invalid user mobileCountryCode ');
         }
-        return new UserCodeCountry(code);
+        return new UserCodeCountry(mobileCountryCode);
     }
 }

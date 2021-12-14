@@ -6,11 +6,13 @@ import { Payment } from "./Payment";
 
 type currencyType='PEN'|'USD'
 type documentType='DNI'|'PAR'|'PAS'|'LMI'|'NAN'
-type Status='PENDING'|'APPROVED'|'REJECTED'|'CANCELED'
+type StatusType='PENDING'|'APPROVED'|'REJECTED'|'CANCELED'
 export class Cip {
     cip:string
     id:string
     clientId:string
+    // document type
+    // 
     currency:currencyType
     amount:number
     transmisionCode:string
@@ -31,7 +33,7 @@ export class Cip {
     updatedAt?:Date
     history?:Object[]   
     payment?:Payment
-    status: Status
+    status: StatusType
     constructor(props:any) {
         this.id = props.id??uuid()
         this.cip=props.cip

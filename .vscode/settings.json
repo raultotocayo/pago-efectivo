@@ -1,5 +1,7 @@
 {
     "javascript.validate.enable": false,
     "flow.useNPMPackagedFlow": true,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.spec.{ext}",
+    "ponicode.testSettings.testLocation.locationType": "Custom"
 }
