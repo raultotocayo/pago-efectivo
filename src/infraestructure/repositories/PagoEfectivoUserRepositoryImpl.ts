@@ -10,9 +10,9 @@ export class PagoEfectivoUserRepositoryImpl implements PagoEfectivoUserRepositor
         this._model = db.collection(COLLECTION_NAME);
     }
     async createOrUpdate(user: PagoEfectivoUser): Promise<PagoEfectivoUser> {
-        const { key, createdAt } = user
+        const { key, createdAt, ...userCopy } = user
         const now = DateTime.local()
-        const updateJson = { ...user, updateAt: now }
+        const updateJson = { ...userCopy, updatedAt: now }
         const createJson = { key: KEY, createdAt: now }
         const result = await this._model.findOneAndUpdate(
             { key: KEY },
@@ -26,7 +26,7 @@ export class PagoEfectivoUserRepositoryImpl implements PagoEfectivoUserRepositor
     }
     getOne(): Promise<PagoEfectivoUser> {
         return this._model.findOne({ key: KEY }).then((user) => {
-            return user as unknown as PagoEfectivoUser;
+            return user as any as PagoEfectivoUser;
         });
     }
 

@@ -9,7 +9,7 @@ export class PagoEfectivoUser {
     tokenExpires: string
     createdAt?:Date
     updatedAt?:Date
-    constructor(props: any) {
+    constructor(props:PagoEfectivoUser ) {
         this.id = props.id??uuid()
         this.token = props.token
         this.codeService = props.codeService

@@ -2,17 +2,17 @@ import * as UserCodeCountry from "./UserCodeCountry"
 
 // @ponicode
 describe("UserCodeCountry.UserCodeCountry.create", () => {
-    test("0", () => {
+    test("should have value +51", () => {
         let result: any = UserCodeCountry.UserCodeCountry.create("+51")
         expect(result).toMatchObject({ value: "+51" })
     })
 
-    test("1", () => {
+    test("should have value +51", () => {
         let result: any = UserCodeCountry.UserCodeCountry.create("+1")
         expect(result).toMatchObject({ value: "+1" })
     })
 
-    test("2", () => {
+    test("should throw error with FR Value", () => {
         let callFunction: any = () => {
             UserCodeCountry.UserCodeCountry.create("FR")
         }
@@ -20,7 +20,7 @@ describe("UserCodeCountry.UserCodeCountry.create", () => {
         expect(callFunction).toThrow('Invalid user mobileCountryCode ')
     })
 
-    test("3", () => {
+    test("should throw error with China value", () => {
         let callFunction: any = () => {
             UserCodeCountry.UserCodeCountry.create("China")
         }
@@ -28,7 +28,7 @@ describe("UserCodeCountry.UserCodeCountry.create", () => {
         expect(callFunction).toThrow('Invalid user mobileCountryCode ')
     })
 
-    test("4", () => {
+    test("should throw error with GB value", () => {
         let callFunction: any = () => {
             UserCodeCountry.UserCodeCountry.create("GB")
         }
@@ -36,7 +36,7 @@ describe("UserCodeCountry.UserCodeCountry.create", () => {
         expect(callFunction).toThrow('Invalid user mobileCountryCode ')
     })
 
-    test("5", () => {
+    test("should throw error with US value", () => {
         let callFunction: any = () => {
             UserCodeCountry.UserCodeCountry.create("US")
         }
@@ -44,7 +44,7 @@ describe("UserCodeCountry.UserCodeCountry.create", () => {
         expect(callFunction).toThrow('Invalid user mobileCountryCode ')
     })
 
-    test("6", () => {
+    test("should throw error with France value", () => {
         let callFunction: any = () => {
             UserCodeCountry.UserCodeCountry.create("France")
         }
@@ -52,7 +52,7 @@ describe("UserCodeCountry.UserCodeCountry.create", () => {
         expect(callFunction).toThrow('Invalid user mobileCountryCode ')
     })
 
-    test("7", () => {
+    test("should throw error with United Stated value", () => {
         let callFunction: any = () => {
             UserCodeCountry.UserCodeCountry.create("United States")
         }
