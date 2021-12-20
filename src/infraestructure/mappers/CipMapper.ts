@@ -64,4 +64,7 @@ export class CipMapper {
             dateExpiry: json.dateExpiry
         }
     }
+    static fromJson(json: any) {
+      
+    }
 }

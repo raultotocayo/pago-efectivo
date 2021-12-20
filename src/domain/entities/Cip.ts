@@ -3,8 +3,8 @@ import { UserEmail } from "../value-objects/UserEmail"
 import { UserPhone } from "../value-objects/UserPhone"
 import { v4 as uuid } from 'uuid';
 import { Payment } from "./Payment";
+import { CurrencyType } from "../value-objects/CurrencyType";
 
-type currencyType='PEN'|'USD'
 type documentType='DNI'|'PAR'|'PAS'|'LMI'|'NAN'
 type StatusType='PENDING'|'APPROVED'|'REJECTED'|'CANCELED'
 export class Cip {
@@ -13,7 +13,7 @@ export class Cip {
     clientId:string
     // document type
     // 
-    currency:currencyType
+    currency:CurrencyType
     amount:number
     transmisionCode:string
     dateExpiry:Date
@@ -34,7 +34,7 @@ export class Cip {
     history?:Object[]   
     payment?:Payment
     status: StatusType
-    constructor(props:any) {
+    constructor(props:Cip) {
         this.id = props.id??uuid()
         this.cip=props.cip
         this.currency=props.currency

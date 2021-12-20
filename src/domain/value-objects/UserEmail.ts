@@ -3,7 +3,6 @@ import { assert } from "console";
 export class UserEmail {
     value: string;
     constructor(value: string) {
-        assert(value!==undefined || value!==null, 'Email is required');  
         this.value = value;
     }
     private static isValidEmail(email: string) {
@@ -11,6 +10,7 @@ export class UserEmail {
         return re.test(email);
     }
     public static create(email: string): UserEmail {
+        assert(email!==undefined  && email!==null, 'Email is required');  
         if (!this.isValidEmail(email)) {
             throw new Error('Invalid email');
         }

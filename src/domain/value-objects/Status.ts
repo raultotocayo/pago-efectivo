@@ -1,15 +1,22 @@
-type StatusType='PENDING'|'PAIDOUT'|'EXPIRED'
+import assert from "assert";
+import { StringUnion } from "../../shared/utils/StringUnion";
 
-export class CipStatus{
-    history:Object[]
-    status:StatusType
-    constructor(status:StatusType){
-        this.status=status
-        this.history=[{status:status,createdAt:new Date().toISOString()}]
+
+const typesOfStatus =StringUnion(
+    'PENDING','APPROVED','REJECTED','CANCELED'
+)
+type typesOfStatusType=typeof typesOfStatus.type
+
+export class Status{
+    value:string
+    constructor(value:string){
+        this.value=value
     }
-}
-export class PendingStatus extends CipStatus{
-    constructor(){
-        super('PENDING')
+    static create(value:string):Status{
+        assert(value!==undefined || value!==null, 'Status cannot be null');
+        if(!typesOfStatus.check(value)){
+            throw new Error('Invalid currency type')
+        }
+        return new Status(value)
     }
 }
